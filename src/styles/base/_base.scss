@@ -3,6 +3,16 @@
     margin: 0px;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 html,
 body {
     height: 100vh;

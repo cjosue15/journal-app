@@ -1,0 +1,116 @@
+.journal__main-content {
+    display: flex;
+}
+
+.journal__sidebar {
+    background-color: $dark-grey;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 2em;
+    width: 400px;
+    flex-shrink: 0;
+    padding-top: 1em;
+}
+
+.journal__sidebar-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        font-weight: 400;
+
+        i {
+            margin-right: 1em;
+        }
+    }
+}
+
+.journal__new-entry {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 0.75em 0.5em;
+
+    span {
+        margin-right: 1em;
+    }
+
+    // &:hover {
+    //     color: darken($color: #000000, $amount: 0);
+    // }
+}
+
+.journal__entries {
+    flex: 1 1 auto;
+    margin: 30px 0;
+    overflow-y: auto;
+    padding-right: 1em;
+
+    .journal__entry {
+        background-color: #fff;
+        border-radius: 5px;
+        color: $dark-grey;
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 1em;
+        overflow: hidden;
+
+        .journal__entry-picture {
+            width: 75px;
+            flex-shrink: 0;
+            // height: 75px;
+        }
+
+        .journal__entry-body {
+            padding: 1em;
+
+            .journal__entry-title {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .journal__entry-content {
+                font-size: 10px;
+            }
+        }
+
+        .journal__entry-date-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+// ::-webkit-scrollbar {
+//     -webkit-appearance: none;
+//     width: 10px;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background: $light-grey;
+//     border: none;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background-color: $primary;
+//     border-radius: 5px;
+//     border: none;
+//     outline: none;
+// }

@@ -1,12 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { startLogout } from '../../../actions/authActions';
 import { JournalEntries } from '../JournalEntries/JournalEntries';
 
 export const Sidebar = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleLogout = () => {
-        console.log(history);
+        dispatch(startLogout());
         history.replace('/auth/login');
     };
 

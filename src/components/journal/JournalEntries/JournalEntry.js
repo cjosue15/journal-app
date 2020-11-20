@@ -8,10 +8,8 @@ export const JournalEntry = React.memo(function JournalEntry({ id, date, body, t
     const dispatch = useDispatch();
 
     const handleActive = () => {
-        dispatch(activeNote(id, { date, body, title }));
+        dispatch(activeNote(id, { date, body, title, url }));
     };
-
-    console.log({ date, body, title });
 
     const { day, month } = transformDate(date);
 

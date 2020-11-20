@@ -17,6 +17,23 @@ export const startNewNote = () => {
     };
 };
 
+export const startNoteUpdate = (note) => {
+    return async (dispatch, getState) => {
+        try {
+            const { uid } = getState().auth;
+
+            const noteToFirestore = { ...note, url: note.url || null };
+            delete noteToFirestore.id;
+
+            await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore);
+        } catch (error) {
+            console.log(error);
+        }
+
+        // dispatch()
+    };
+};
+
 export const startLoadingNotes = (uid) => {
     return async (dispatch) => {
         const notes = await loadNotes(uid);

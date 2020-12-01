@@ -73,46 +73,79 @@
     padding-right: 1em;
 
     .journal__entry {
-        background-color: #fff;
-        border-radius: 5px;
-        color: $dark-grey;
-        display: flex;
-        cursor: pointer;
-        margin-bottom: 1em;
+        position: relative;
         overflow: hidden;
+        margin-bottom: 1em;
 
-        .journal__entry-picture {
-            width: 75px;
-            flex-shrink: 0;
-            // height: 75px;
-        }
-
-        .journal__entry-body {
-            padding: 1em;
-            flex: 1 1 auto;
-            min-height: 65px;
-
-            .journal__entry-title {
-                font-size: 14px;
-                font-weight: 600;
-            }
-
-            .journal__entry-content {
-                font-size: 10px;
-            }
-        }
-
-        .journal__entry-date-box {
+        .journal__entry-content {
+            background-color: #fff;
+            border-radius: 5px;
+            color: $dark-grey;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
+            cursor: pointer;
 
-            span {
-                font-size: 12px;
+            .journal__entry-picture {
+                width: 75px;
+                flex-shrink: 0;
+                // height: 75px;
+            }
+
+            .journal__entry-body {
+                padding: 1em;
+                flex: 1 1 auto;
+                min-height: 65px;
+
+                .journal__entry-title {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                .journal__entry-content {
+                    font-size: 10px;
+                }
+            }
+
+            .journal__entry-date-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+
+                span {
+                    font-size: 12px;
+                }
             }
         }
+
+        .journal__entry-delete {
+            background: #e63946;
+            position: absolute;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            right: -50px;
+            top: calc(50% - 20px);
+
+            &:hover {
+                background: darken($color: #e63946, $amount: 10%);
+            }
+
+            i {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.journal__entry:hover {
+    .journal__entry-delete {
+        right: 10px;
     }
 }
 

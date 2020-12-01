@@ -21,10 +21,11 @@ export const NoteScreen = () => {
 
     useEffect(() => {
         dispatch(activeNote(values.id, { ...values }));
+        console.log('ga');
     }, [values, dispatch]);
 
     return (
-        <div className='notes__main-content'>
+        <div className='notes__main-content animate__animated animate__fadeIn'>
             <NotesAppBar />
             <div className='notes__content'>
                 <input
@@ -45,7 +46,10 @@ export const NoteScreen = () => {
                 ></textarea>
                 {note.url && (
                     <div className='notes__image'>
-                        <img src='https://miro.medium.com/max/1051/1*vPmRhskB39yduuJobjgqwg.png' alt='Gatito' />
+                        <img
+                            src={`${note.url || 'https://miro.medium.com/max/1051/1*vPmRhskB39yduuJobjgqwg.png'}`}
+                            alt='Gatito'
+                        />
                     </div>
                 )}
             </div>
